@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" >
+        <title></title>
+        <script src="../dist/jquery.min.js"></script>
+        <script>
+            $("document").ready(function(){
+                $("body").append("<h1>I love jquery</h1>");
+                $("h2").css("border","1px solid green");
+                $(".type").css("color","red");
+
+                var newText = $("<p>");
+                    newText.append("Type 4444");
+                    $("#special").html(newText);
+
+
+
+                $("button").on("click",whenMouseClicked);
+                
+                function whenMouseClicked (){
+                    $("button").html("Mouse Clicked");
+                }
+                $("button").on("mouseleave",whenMouseLeaved);
+                
+                function whenMouseLeaved (){
+                    $("button").html("Mouse leaved!");
+                }
+            })
+            
+            $("document").ready(function(){
+                $(".hiLight").hover(doHilight);
+                function doHilight(){
+                    $(this).toggleClass("hiLight1");
+                }
+            })
+        </script>
+        <style>
+            button {
+               background-color: beige;
+               border: cadetblue solid 1px;
+               width: 150px;
+               height: 50px;
+            }
+            .hiLight1{
+                background: crimson;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hiren</h1>
+        <h2> I love .NET</h2>
+        <div>
+            <ul>
+                <li>Type 1</li>
+                <li>Type 2</li>
+                <li class="type">Type 3</li>
+                <li id="special">Type 4</li>
+            </ul>
+        </div>
+        <p class="hiLight">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Unde, enim ipsa! Pariatur placeat ut quasi officiis perspiciatis 
+            dolorem molestias! Quia modi ullam perferendis consequatur debitis 
+            quis vel ab dolorem est.
+        </p>
+        <button></button>
+    </body>
+</html>
